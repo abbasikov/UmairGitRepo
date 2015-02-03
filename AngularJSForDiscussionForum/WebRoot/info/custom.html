@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>custom.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=US-ASCII">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="../css/discussion.css" media="all">
+<script type="text/javascript">
+function hello()
+{
+if(document.getElementById("testTemp").className.contains("hide"))
+document.getElementById("testTemp").className = "reply-form-container";
+else
+document.getElementById("testTemp").className = "reply-form-container hide";
+}
+</script>
+
+</head>
+
+<body>
+
+
+
+
+	<div id="posts" style="background: 0 0;color: #3f4549;font-family: "Helvetica Neue", arial, sans-serif;font-size: 15px;-webkit-font-smoothing: antialiased">
+
+		<div id="form">
+			<form class="reply authenticated expanded">
+				<div class="postbox">
+					<div role="alert"></div>
+					<div class="avatar">
+						<a class="user"> <img alt="Avatar" src="../images/avatar92.jpg"></a>
+					</div>
+
+					<div dir="auto" class="textarea-wrapper">
+						<div>
+							
+							<div>
+								<textarea cols="50" rows="5"  style="border:none"></textarea> 
+							</div>
+							
+						</div>
+						
+						
+						<div class="edit-alert"></div>
+						<div class="post-actions">
+							
+							<div class="logged-in">
+								<section>
+									<div style="text-align: right" class="temp-post">
+										<button class="btn">
+											Post 
+										</button>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="login-form">
+						<div></div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<ul class="post-list" id="post-list">
+			<li class="post" id="post-1680391057"><div role="alert"></div>
+				<div class="post-content">
+					
+
+					<div class="indicator"></div>
+					
+					<!-- [START] AVATAR  -->
+					<div class="avatar hovercard">
+						<a  class="user" href="www.google.com"> 
+							<img alt="Avatar" src="../images/avatar92.jpg">
+						</a>
+					</div>					
+					<!-- [END] AVATAR  -->
+					
+					
+					<div class="post-body">
+					
+					<!-- [START] HEADER -->
+						<header>
+							<span class="post-byline"> 
+								<span class="author publisher-anchor-color">
+									<a >Abbasikov</a>
+								</span>
+							</span> 
+							<span class="post-meta"> 
+								<span class="bullet time-ago-bullet"></span> 
+								<a class="time-ago">2 hours ago</a>
+							</span>
+
+						</header>
+					<!-- [END] HEADER -->
+						
+					<!-- [START] POST INNER BODY -->
+						<div class="post-body-inner">
+							<div class="post-message-container">
+								<div class="publisher-anchor-color">
+									<div class="post-message ">
+										<p>Hello World</p>
+									</div>
+
+									
+								</div>
+							</div>							
+						</div>
+					<!-- [END] POST INNER BODY -->
+
+					<!-- [START] FOOTER -->
+						<footer>
+							<menu>
+
+								
+								<li  class="bullet"></li>
+
+								<!-- [START] REPLY -->
+								<li class="reply">
+									<a href="#" onclick="javascript:hello();"> 
+										<i class="icon icon-mobile icon-reply"></i>
+											<span class="text">Reply</span>
+									</a>
+								</li>
+								<!-- [END] REPLY -->
+								
+								
+
+									
+								<li class="share">
+									<a class="toggle">
+										<i class="icon icon-mobile icon-share"></i>
+										<span class="text">Share ></span>
+									</a>
+									<ul>
+										<li class="twitter">
+											<a href="#">Twitter</a>
+										</li>
+										<li class="facebook">
+											<a href="#">Facebook</a>
+										</li>
+										<li class="link">
+											<a>Link</a>
+										</li>
+									</ul></li>
+
+								<li class="realtime">
+									<span class="realtime-replies" style="display:none;"></span> 
+									<a class="btn btn-small" href="#" style="display:none;"></a>
+								</li>
+
+							</menu>
+						</footer>
+						
+					<!-- [END] FOOTER -->
+					
+					</div>
+
+
+
+					<!-- [START] REPLY FROM CONTAINER  -->
+
+
+					<div data-role="reply-form" class="reply-form-container" id="testTemp">
+						<form class="reply expanded authenticated">
+							<div class="postbox">
+								<div></div>
+								<div class="avatar">
+									<a class="user"> 
+										<img alt="Avatar" src="../images/avatar92.jpg">
+									</a>
+								</div>
+
+								<div class="textarea-wrapper">
+									<div>
+										
+										<div>
+											<textarea cols="50" rows="5" style="border:none"></textarea> 
+										</div>
+										
+									</div>
+									
+									
+									
+									<div class="post-actions">
+										
+										<div class="logged-in">
+											<section>
+												<div style="text-align: right" class="temp-post">
+													<button class="btn">Post</button>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+
+								
+							</div>
+						</form>
+					</div>
+					
+					<!-- [END] REPLY FROM CONTAINER  -->
+
+
+
+
+
+				</div>
+
+				<ul class="children" data-role="children"></ul></li>
+
+		</ul>
+
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
+

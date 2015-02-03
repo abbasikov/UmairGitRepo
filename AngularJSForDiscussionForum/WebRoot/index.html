@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS UI Tree demo</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/angular-ui-tree.min.css">
+  <link rel="stylesheet" href="css/demo.css">
+   <script src="bower_components/angular/angular.min.js"></script>
+  <script src="dist/angular-ui-tree.js"></script>
+  <script src="js/demo.js"></script>
+</head>
+<body ng-app="demoApp" ng-controller="MainCtrl">
+  
+    
+
+   
+    <div class="row">
+      <div class="col-md-12">
+          <div class="row" id="boundary">
+            <div class="col-lg-6">
+              <h4>Draggable Tree</h4>
+
+              <!-- Nested list template -->
+              <script type="text/ng-template" id="items_renderer.html">
+                <div ui-tree-handle ng-class="{ 'select': $treeScope.multiSelect, 'copy': $treeScope.copy }">
+                  <a class="btn btn-success btn-xs" nodrag ng-click="toggle(this)">
+                    <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed }"></span>
+                  </a>
+                  {{item.title}}
+
+                  <a class="pull-right btn btn-danger btn-xs" nodrag ng-click="remove(this)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </a>
+                  <a class="pull-right btn btn-primary btn-xs" nodrag ng-click="newSubItem(this)" style="margin-right: 8px;">
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </a>
+                </div>
+                <ol ui-tree-nodes ng-model="item.items" ng-class="{ 'hidden': collapsed }">
+                  <li ng-repeat="item in item.items" ui-tree-node ng-class="{ 'selected': selected, 'original': original }" ng-include="'items_renderer.html'"></li>
+                </ol>
+              </script>
+              <ui-tree callbacks="callbacks" drag-enabled="parameters.dragEnabled" empty-placeholder-enabled="parameters.emptyPlaceholderEnabled" max-depth="parameters.maxDepth" drag-delay="parameters.dragDelay" drag-distance="parameters.dragDistance" lock-x="parameters.lockX" lock-y="parameters.lockY" bound-to="parameters.boundTo" spacing="parameters.spacing" coverage="parameters.coverage" cancel-key="parameters.cancelKey" copy-key="parameters.copyKey" select-key="parameters.selectKey" expand-on-hover="(parameters.enableExpandOnHover) ? parameters.expandOnHover : parameters.enableExpandOnHover">
+                <ol ui-tree-nodes ng-model="list">
+                  <li ng-repeat="item in list" ui-tree-node ng-class="{ 'selected': selected, 'original': original }" ng-include="'items_renderer.html'"></li>
+                </ol>
+              </ui-tree>
+            </div>
+
+            <div class="col-lg-6">
+              <h4>Full tree</h4>
+              <pre class="code">{{ list | json }}</pre>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+ 
+ 
+</body>
+</html>

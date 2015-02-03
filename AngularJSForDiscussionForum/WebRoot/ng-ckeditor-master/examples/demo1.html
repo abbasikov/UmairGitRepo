@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        <script src="../../js/angular.min.js"></script>
+        
+        <script>
+        var app = angular.module('main', []).
+        controller('DemoCtrl', function($scope, $http) {
+        	    $scope.dailies = [
+                        {description:'hello',created:'Umair',childs:[{a:"ali",b:"sami"}] },
+                        {description:'world',created:'Abbasi',childs:[{a:"ali1",b:"sami1"}]},
+                        
+                     ];
+    
+    $scope.f = function(index)
+    {
+    	var ele = document.getElementById('replyBox'+index);
+  
+    	if(ele.className.contains('ng-hide'))
+    		ele.className = ele.className.replace('ng-hide','');
+    	else
+        	ele.className += ' ng-hide';
+    } 
+        	    
+        });
+        </script>
+        
+    </head>
+<body ng-app="main">
+    <h1>Simple editor</h1>
+
+    <div ng-controller="DemoCtrl">
+      <div ng-show="show">umair</div>
+      <ul>
+          <li ng-repeat="daily in dailies" ng-show="daily.hasOwnProperty('description')">
+              <div id="replyBox{{$index}}">
+              {{daily.description}}:{{daily.created}}
+              		<ul>
+              			<li ng-repeat="child in daily.childs"> 
+              				{{child.a}}:{{child.b}}
+              			</li>
+              		</ul>
+              </div>
+              <input type="button" value="Press{{$index}}" ng-click="f($index)"></input> 
+                
+          </li>
+      </ul>
+        
+  </div>
+
+
+    </body>
+</html>
